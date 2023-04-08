@@ -1,8 +1,18 @@
 package com.bridgelabz.HelloApp.model;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "Employee_Table")
 public class User {
+
+    @Id
+    @GeneratedValue
+    private int id;
     private String firstName;
     private String lastName;
     private String mobileNumber;
@@ -10,6 +20,13 @@ public class User {
 
     public String getFirstName() {
         return firstName;
+    }
+    public User(){}
+    public User(String firstName, String lastName, String mobileNumber, String address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.mobileNumber = mobileNumber;
+        this.address = address;
     }
 
     public void setFirstName(String firstName) {
